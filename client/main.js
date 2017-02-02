@@ -4,6 +4,6 @@ import ReactDOOM from 'react-dom';
 import App from "./components/App.jsx";
 
 ReactDOOM.render(
-	<App />,
+	<h1> Notes </h1>,
 	document.getElementById('mount-point')
 );

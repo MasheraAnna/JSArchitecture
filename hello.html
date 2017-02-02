@@ -9,11 +9,12 @@
 </head>
 <body>
 	<div id = 'content'></div>
+	
 	<script type = "text/babel">
-
-	// функция React.createClass - создает компонент
 	
 		const HelloWorld = React.createClass({
+			// функция React.createClass - создает компонент	
+			
 			getInitialState(){
 				return {
 					name: "Vasya"
@@ -26,18 +27,23 @@
 				});
 			},
 
+			// вот этого я тоже не понимаю, как это е попало туда? где мы его передали? Если мы е не передавали, 
+			// как оно узнало target value от чего брать? Е - это событие?
+			// мы обратились к handleNameChange как к свойству this, почему мы не вызвали его как функцию? 
+			// и не передали туда соответствующий аргумент?
+
 			render(){
 				return (
 					<div>
-						<h1> Hello, {this.props.name}! </h1>
-						<input type = 'text' value = {this.props.name} onChange = {this.handlNameChange}/>
+						<h1> Hello, {this.state.name}! </h1>
+						<input type = 'text' value = {this.state.name} onChange = {this.handlNameChange}/>
 					</div>
 				);
 			}
 		});
 
 		ReactDOM.render(
-			<HelloWorld name = "Anna"/>,
+			<HelloWorld />,
 			document.getElementById('content')
 		);
 	</script>
